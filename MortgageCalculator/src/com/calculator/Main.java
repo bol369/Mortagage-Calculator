@@ -12,15 +12,17 @@ public class Main {
 
         System.out.print("Annual Interest Rate :");
         float an_in_rate = scanner.nextFloat();
-        float monthlyInterest = an_in_rate/100/12;
+        int percent = 100;
+        int months_in_year = 12;
+        float monthlyInterest = an_in_rate/percent/months_in_year;
 
         System.out.print("Period (Years) :");
         byte period = scanner.nextByte();
-        int n = period * 12;
+        int numberOfPayment = period * months_in_year;
 
         // Calculate the Monthly Payment
-        double monthly_payment = principal * (monthlyInterest * Math.pow(1+monthlyInterest,n))
-                /(Math.pow(1+monthlyInterest,n)-1);
+        double monthly_payment = principal * (monthlyInterest * Math.pow(1+monthlyInterest,numberOfPayment))
+                /(Math.pow(1+monthlyInterest,numberOfPayment)-1);
 
         String currency = NumberFormat.getCurrencyInstance(new Locale("en","lk")).format(monthly_payment);
 

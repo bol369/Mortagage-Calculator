@@ -27,6 +27,6 @@ public class Main {
         String currency = NumberFormat.getCurrencyInstance(new Locale("en","lk")).format(monthly_payment);
 
 
-        System.out.println("Monthly Payment:" + currency);
+        System.out.println("Monthly Payment : " + currency);
     }
 }
